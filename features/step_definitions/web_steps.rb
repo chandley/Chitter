@@ -23,3 +23,16 @@ end
 Then(/^I should see at least one message$/) do
   expect(page).to have_content("Test message")
 end
+
+Given(/^an anonymous visitor to homepage$/) do
+  step 'an anonymous visitor'
+  step 'I visit the homepage'
+end
+
+When(/^I click 'sign up'$/) do
+  click_button 'sign_up'
+end
+
+Then(/^I am invited to give details$/) do
+  expect(page).to have_content("Please enter your name, email and password")
+end
