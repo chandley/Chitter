@@ -30,7 +30,7 @@ Given(/^an anonymous visitor to homepage$/) do
 end
 
 When(/^I click 'sign up'$/) do
-  click_button 'sign_up'
+  click_link 'sign_up'
 end
 
 Then(/^I am invited to give details$/) do
