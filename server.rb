@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Server < Sinatra::Base
   get '/' do
-    'Hiya'
+    'Welcome to Chitter'
   end
 
   # start the server if ruby file executed directly
