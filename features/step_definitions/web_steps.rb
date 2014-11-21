@@ -17,9 +17,9 @@ Then(/^I should see a welcome message$/) do
 end
 
 Given(/^a message has been posted$/) do
-  pending # express the regexp above with the code you wish you had
+  Message.create(:message_text => "Test message", :message_time => Time.now)
 end
 
 Then(/^I should see at least one message$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content("Test message")
 end

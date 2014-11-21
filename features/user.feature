@@ -10,6 +10,6 @@ Feature: My Twitter Clone
 
   Scenario: see messages on homepage
     Given an anonymous visitor
-    And a message has been posted
     When I visit the homepage
+    And a message has been posted   
     Then I should see at least one message

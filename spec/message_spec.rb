@@ -1,9 +1,10 @@
 require 'message'
 require 'database'
+require 'spec_helper'
 
 describe 'Message' do
 
-  before(:each) do Message.create(:message_text => "Test message", :message_time => "now") end
+  before(:each) do Message.create(:message_text => "Test message", :message_time => Time.now) end
 
   it 'should be able to be created' do
     expect(Message.count).not_to eq(0)
@@ -14,6 +15,6 @@ describe 'Message' do
   end
 
   it 'should have a time' do
-    expect(Message.first.message_time).to eq("now")
+    expect(Message.first.message_time).not_to be_nil
   end
 end
