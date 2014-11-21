@@ -5,7 +5,7 @@ require './server.rb'
 
 
 Given(/^an anonymous visitor$/) do
-  @session = Server.new
+  @session = Chitter.new
 end
 
 When(/^I visit the homepage$/) do

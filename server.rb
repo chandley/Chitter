@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Server < Sinatra::Base
+class Chitter < Sinatra::Base
   get '/' do
     'Welcome to Chitter'
   end
