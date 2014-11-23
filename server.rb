@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/users/new' do
-    'Please enter your name, email and password'
+    erb :"users/new"
   end
 
   # start the server if ruby file executed directly

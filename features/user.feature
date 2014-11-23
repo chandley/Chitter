@@ -13,6 +13,11 @@ Feature: My Twitter Clone
     When I click 'sign up'
     Then I am invited to give details
 
+  Scenario: I sign up
+    Given I am on the signup page
+    When I enter my details
+    Then I am logged in as a new user
+
   Scenario: I see messages on homepage
     Given an anonymous visitor
     When I visit the homepage
