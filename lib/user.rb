@@ -4,7 +4,7 @@ require 'bcrypt'
 class User
   include DataMapper::Resource
 
-  property :user_id, Serial
+  property :id, Serial
   property :email, String, :unique => true
   property :username, String, :unique => true
 

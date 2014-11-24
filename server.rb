@@ -11,6 +11,10 @@ class Chitter < Sinatra::Base
     erb :homepage
   end
 
+  post '/' do
+    erb :homepage
+  end
+
   get '/users/new' do
     erb :"users/new"
   end
@@ -21,13 +25,17 @@ class Chitter < Sinatra::Base
                         :password => params[:password],
                         :password_confirmation => params[:password_confirmation]
                         )
-    @user.save
-    session[:user_id] = @user.user_id
+    if @user.save
+      session[:user_id] = @user.id
+      p session
+    end
     redirect to ('/')
   end
 
    def current_user
-      @current_user ||=User.get(session[:user_id]) if session[:user_id]
+      puts 'hello current user '
+      current_user ||=User.get(session[:user_id]) if session[:user_id]
+      p current_user
     end
 
   # start the server if ruby file executed directly
