@@ -7,7 +7,6 @@ class Chitter < Sinatra::Base
   set :views, Proc.new { File.join(root,  "/views") }
   
   get '/' do
-    Welcome to Chitter
     erb :homepage
   end
 
@@ -25,6 +24,10 @@ class Chitter < Sinatra::Base
     session[:user_id] = @user.user_id
     redirect to ('/')
   end
+
+   def current_user
+      @current_user ||=User.get(session[:user_id]) if session[:user_id]
+    end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
