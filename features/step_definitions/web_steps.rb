@@ -58,5 +58,5 @@ When(/^I enter my details$/) do
 end
 
 Then(/^I am logged in as a new user$/) do
-  expect(page).to have_content("Welcome test")
+  expect(page).to have_content("Welcome, test")
 end

@@ -4,6 +4,17 @@
     <title>Chitter</title>
   </head>
   <body>
+  <header>
+    <div id="logo">Chitter, twitter clone</div>
+    <div id='user-links'>
+      <% if current_user %>
+         <span id = "Welcome-message">
+          Welcome, <%= current_user.username %>
+      <% else %>
+        <a href='/users/new' id='sign_up' name='sign_up' class='button'>sign_up</a>
+      <% end %>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>

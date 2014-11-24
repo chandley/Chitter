@@ -3,6 +3,7 @@ require 'data_mapper'
 require './lib/database.rb'
 
 class Chitter < Sinatra::Base
+  enable :sessions
 
   set :views, Proc.new { File.join(root,  "/views") }
   
