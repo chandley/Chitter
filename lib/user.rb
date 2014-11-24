@@ -8,7 +8,7 @@ class User
   property :email, String, :unique => true
   property :username, String, :unique => true
 
-  attr_reader :password
+  attr_reader :password, :name
   attr_accessor :password_confirmation
   validates_confirmation_of :password
 
