@@ -27,15 +27,12 @@ class Chitter < Sinatra::Base
                         )
     if @user.save
       session[:user_id] = @user.id
-      p session
     end
     redirect to ('/')
   end
 
    def current_user
-      puts 'hello current user '
       current_user ||=User.get(session[:user_id]) if session[:user_id]
-      p current_user
     end
 
   # start the server if ruby file executed directly
