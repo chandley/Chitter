@@ -10,6 +10,7 @@
       <% if current_user %>
          <span id = "Welcome-message">
           Welcome, <%= current_user.username %>
+          <a href='/' id='sign_out' name='sign_out' class='button'>Sign out</a>
       <% else %>
         <a href='/users/new' id='sign_up' name='sign_up' class='button'>sign_up</a>
       <% end %>

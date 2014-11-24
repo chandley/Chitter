@@ -57,6 +57,47 @@ When(/^I enter my details$/) do
   click_button "Sign up"
 end
 
-Then(/^I am logged in as a new user$/) do
+Then(/^I am welcomed as a new user$/) do
   expect(page).to have_content("Welcome, test")
+end
+
+Given(/^I am logged in as a new user$/) do
+  step 'I am on the signup page'
+  step 'I enter my details'
+end
+
+Then(/^I am invited to enter a message$/) do
+  expect(page).to have_content("Enter message")
+end
+
+Then(/^I see the message on the homepage$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I sign out$/) do
+  click_button "sign_out"
+end
+
+When(/^I click 'sign in'$/) do
+  click_link 'sign_in'
+end
+
+Then(/^I am invited to give username and password$/) do
+  expect(page).to have_content("Please enter your name and password")
+end
+
+
+
+Given(/^I am logged in to homepage$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I am logged in as a user$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I give previously registered username and password$/) do
+  ill_in 'username', :with => 'test'
+  fill_in 'password', :with => 'password'
+  click_button "Sign in"
 end

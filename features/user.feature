@@ -16,10 +16,19 @@ Feature: My Twitter Clone
   Scenario: I sign up
     Given I am on the signup page
     When I enter my details
-    Then I am logged in as a new user
+    Then I am welcomed as a new user
 
-  Scenario: I see messages on homepage
-    Given an anonymous visitor
-    When I visit the homepage
-    And a message has been posted   
-    Then I should see at least one message
+  Scenario: I sign out
+    Given I am logged in as a new user
+    When I sign out
+    Then I should see a welcome message
+
+  Scenario: I decide to sign in
+    Given an anonymous visitor to homepage
+    When I click 'sign in'
+    Then I am invited to give username and password
+
+  Scenario: I sign in
+    Given an anonymous visitor to homepage
+    When I give previously registered username and password
+    Then I am logged in as a user
