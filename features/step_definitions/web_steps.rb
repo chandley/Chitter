@@ -51,12 +51,12 @@ end
 
 When(/^I enter my details$/) do
   fill_in 'email', :with => 'test@user.com'
-  fill_in 'username', :with => 'username'
+  fill_in 'username', :with => 'test'
   fill_in 'password', :with => 'password'
   fill_in 'password_confirmation', :with => 'password'
   click_button "Sign up"
 end
 
 Then(/^I am logged in as a new user$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content("Welcome test")
 end
