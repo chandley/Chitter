@@ -12,9 +12,16 @@
 
 <div id='message list'>
   <h3>list of messages</h3>
-  <ul>
+  <table style="width:50%">
+    <tr>
+      <th>Time</th>
+      <th>Message</th>
+    </tr>
     <% @messages.each do |message| %>
-      <li><%= message.message_text %></li>
+      <tr>
+        <td><%=message.message_time.strftime("%d/%m/%Y %H:%M:%S")%></td>
+        <td><%=  message.message_text %></td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </div>
