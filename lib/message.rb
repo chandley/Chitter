@@ -6,5 +6,5 @@ class Message
   property :id, Serial
   property :message_text, String
   property :message_time, Time
-
+  belongs_to :user
 end

@@ -17,7 +17,7 @@ Then(/^I should see a welcome message$/) do
 end
 
 Given(/^a message has been posted$/) do
-  Message.create(:message_text => "Test message", :message_time => Time.now)
+  Message.create(:message_text => "Test message", :message_time => Time.now, :user_id = Users(:name = 'test').first.id
 end
 
 Then(/^I should see at least one message$/) do

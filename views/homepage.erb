@@ -12,7 +12,7 @@
 
 <div id='message list'>
   <h3>list of messages</h3>
-  <table style="width:50%">
+  <table style="width:40%">
     <tr>
       <th>Time</th>
       <th>Message</th>
@@ -20,7 +20,7 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%=message.message_time.strftime("%d/%m/%Y %H:%M:%S")%></td>
-        <td><%=  message.message_text %></td>
+        <td><%=message.message_text %></td>
       </tr>
     <% end %>
   </table>

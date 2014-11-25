@@ -52,7 +52,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/messages/new' do
-    Message.create(:message_text => params[:message_text], :message_time => Time.now)
+    @user = current_user
+    Message.create(:message_text => params[:message_text], :message_time => Time.now, :user_id => session[:user_id])
     redirect to ('/')
   end
 

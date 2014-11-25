@@ -14,6 +14,8 @@ class User
 
   property :password_digest, Text
 
+  has n, :messages
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

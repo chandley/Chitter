@@ -1,10 +1,18 @@
 require 'message'
 require 'database'
 require 'spec_helper'
+require 'user'
 
 describe 'Message' do
 
-  before(:each) do Message.create(:message_text => "Test message", :message_time => Time.now) end
+  before(:each) do User.create(:username => "joe", 
+                               :email => "joe@bloggs.com", 
+                               :password => "pass", 
+                               :password_confirmation => "pass"
+                               ) 
+  end
+
+  before(:each) do Message.create(:message_text => "Test message", :message_time => Time.now, :user_id => 1) end
 
   it 'should be able to be created' do
     expect(Message.count).not_to eq(0)
