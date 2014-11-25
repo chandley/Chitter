@@ -8,10 +8,12 @@ class Chitter < Sinatra::Base
   set :views, Proc.new { File.join(root,  "/views") }
   
   get '/' do
+    @messages = Message.all
     erb :homepage
   end
 
   post '/' do
+    @messages = Message.all
     erb :homepage
   end
 
@@ -46,6 +48,11 @@ class Chitter < Sinatra::Base
     if user
       session[:user_id] = user.id
     end
+    redirect to ('/')
+  end
+
+  post '/messages/new' do
+    Message.create(:message_text => params[:message_text], :message_time => Time.now)
     redirect to ('/')
   end
 

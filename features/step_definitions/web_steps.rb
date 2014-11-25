@@ -67,7 +67,7 @@ Given(/^I am logged in as a new user$/) do
 end
 
 Then(/^I am invited to enter a message$/) do
-  expect(page).to have_content("Enter message")
+  expect(page).to have_content("enter a message")
 end
 
 Then(/^I see the message on the homepage$/) do
