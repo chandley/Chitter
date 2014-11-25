@@ -10,4 +10,4 @@ Feature: As a registered user
   Scenario: I enter a message
     Given I am logged in as a new user
     When I enter a message
-    Then I see the message on the homepage
+    Then I see the test message on the homepage

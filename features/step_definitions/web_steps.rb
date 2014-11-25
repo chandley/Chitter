@@ -38,11 +38,11 @@ Then(/^I am invited to give details$/) do
 end
 
 When(/^I enter a message$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'message_text', :with  => 'this is a test message'
 end
 
-Then(/^I should see the message on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I see the test message on the homepage$/) do
+  expect(page).to have_content('this is a test message')
 end
 
 Given(/^I am on the signup page$/) do
