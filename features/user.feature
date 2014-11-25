@@ -16,7 +16,7 @@ Feature: My Twitter Clone
   Scenario: I sign up
     Given I am on the signup page
     When I enter my details
-    Then I am welcomed as a new user
+    Then I am welcomed as a test user
 
   Scenario: I sign out
     Given I am logged in as a new user
@@ -31,4 +31,4 @@ Feature: My Twitter Clone
   Scenario: I sign in
     Given an anonymous visitor to homepage
     When I give previously registered username and password
-    Then I am logged in as a user
+    Then I am welcomed as a test user

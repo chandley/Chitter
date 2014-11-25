@@ -57,7 +57,7 @@ When(/^I enter my details$/) do
   click_button "Sign up"
 end
 
-Then(/^I am welcomed as a new user$/) do
+Then(/^I am welcomed as a test user$/) do
   expect(page).to have_content("Welcome, test")
 end
 
@@ -97,7 +97,11 @@ Then(/^I am logged in as a user$/) do
 end
 
 When(/^I give previously registered username and password$/) do
-  ill_in 'username', :with => 'test'
+  step 'I am on the signup page'
+  step 'I enter my details'
+  step 'I sign out'
+  visit '/sessions/new'
+  fill_in 'username', :with => 'test'
   fill_in 'password', :with => 'password'
   click_button "Sign in"
 end
