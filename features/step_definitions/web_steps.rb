@@ -75,7 +75,7 @@ Then(/^I see the message on the homepage$/) do
 end
 
 When(/^I sign out$/) do
-  click_button "sign_out"
+  click_link "sign_out"
 end
 
 When(/^I click 'sign in'$/) do
