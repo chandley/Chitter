@@ -20,7 +20,7 @@ Twitter clone that will allow the users to post messages to a public stream.
 | Languages | Technologies  | Testing Frameworks| Misc
 | :-------------------------------------------- |:--------------|:-----------|:----|
 | Ruby      |               | Rspec             |               |
-|           |               |                   |               |
+|           |               | Cucumber                  |               |
 |           |               |                   |  
 |           |               |
 
@@ -47,22 +47,19 @@ Message
 
 ### Tests
 
+rspec, cucumber
+
 ### Images
 
 ### To do
+
+* failing Rspec unit tests
 
 
 
 ### Learning points
 
-*
-*Chitter Challenge
-=================
 
-
-
-Features:
----------
 
 
 
