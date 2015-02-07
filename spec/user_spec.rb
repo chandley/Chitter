@@ -1,6 +1,7 @@
+require 'spec_helper'
 require 'user'
 require 'database'
-require 'spec_helper'
+
 
 describe 'User' do
 

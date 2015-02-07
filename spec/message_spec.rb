@@ -1,6 +1,7 @@
+require 'spec_helper'
 require 'message'
 require 'database'
-require 'spec_helper'
+
 
 describe 'Message' do
 
